@@ -1,0 +1,109 @@
+@import _tokens
+
+.fix-at-bottom
+  position: fixed
+  bottom: 10px
+  right: 0
+  z-index: 5
+  display: flex
+  align-items: flex-end
+
+.grift-counter, .fixed-at-bottom-button
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.4)
+
+.fixed-at-bottom-button
+  display: flex
+  align-items: center
+  justify-content: center
+  background-color: $accent
+  color: $title-color
+  height: 28px
+  width: 28px
+  margin-right: 5px
+
+.grift-counter
+  box-sizing: content-box
+  border-top: 16px solid #0000
+  height: 28px
+  border-bottom: 0
+  border-right: 0
+  border-image-source: url(https://storage.googleapis.com/primary-web3/flames.gif)
+  border-image-slice: 16 0
+  border-image-repeat: repeat
+
+  &.no-animate
+    border-image-source: url(https://storage.googleapis.com/primary-web3/flames.png)
+
+  &.animate
+    border-image-source: url(https://storage.googleapis.com/primary-web3/flames.gif)
+
+  > div
+    background-color: $accent
+    font-family: $display-font
+    color: $title-color
+    padding: 5px 10px
+
+  button
+    color: $title-color
+
+.settings-panel
+  position: fixed
+  bottom: 45px
+  right: 10px
+  z-index: 5
+  background-color: $card-background
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.4)
+  color: $main-text-color
+  width: 90%
+  max-width: 300px
+  padding: 10px
+
+  button
+    color: $main-text-color
+
+  .header-and-close
+    display: flex
+    justify-content: space-between
+    align-items: center
+    margin-bottom: 10px
+
+  h2, h3, h4, h5
+    margin: 0
+
+  input
+    margin-right: 5px
+
+  .input-group
+    display: flex
+    align-items: center
+    margin-bottom: 5px
+
+  .radio-group
+    h4
+      margin: 10px 0 5px 0
+
+    .input-group
+      align-items: baseline
+
+  .settings-section
+    margin: 10px 0 10px 15px
+
+.use-sans-serif .grift-counter > div
+  font-family: $sans-serif-body-font
+
+@media (prefers-reduced-motion: reduce)
+  .grift-counter
+    // People with prefers-reduced-motion set can still opt in to the animation, in which case
+    // .animate will also be set, and this will be overriden by the more specific selector above
+    border-image-source: url(https://storage.googleapis.com/primary-web3/flames.png)
+
+@mixin fixedDarkMode()
+  .grift-counter, .fixed-at-bottom-button
+    filter: brightness(80%)
+
+  .settings-panel
+    background-color: $dark-lightbox-background
+    color: $dark-main-color
+
+    button
+      color: $dark-main-color

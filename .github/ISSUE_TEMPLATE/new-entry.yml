@@ -1,0 +1,57 @@
+name: New entry
+description: Suggest a new entry
+title: "[NEW]: "
+labels: [new]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to submit a new example!
+  - type: input
+    id: date
+    attributes:
+      label: Date
+      description: When did this happen?
+      placeholder: ex. 2021-12-24
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Please provide a small blurb (about one paragraph) that describes
+      placeholder: "Stan Lee fans were outraged when the Twitter account belonging to Lee, who died in 2018, posted a message to promote an upcoming NFT [...]"
+    validations:
+      required: true
+  - type: textarea
+    id: links
+    attributes:
+      label: Links
+      description: Please paste all relevant links.
+      placeholder: "https://google.com"
+    validations:
+      required: true
+  - type: checkboxes
+    id: agreement
+    attributes:
+      label: Agreement
+      description: By submitting this issue, I irrevocably agree to release my contribution under the [CC-BY 3.0 License](http://creativecommons.org/licenses/by/3.0/deed.en_US). I agree that a hyperlink or URL is sufficient attribution under the Creative Commons license.
+      options:
+        - label: I irrevocably agree to release my contribution under the CC-BY 3.0 License
+          required: true
+  - type: input
+    id: attribution-name
+    attributes:
+      label: Attribution name
+      description: Please indicate the name you'd like to be displayed in attribution. If left blank, I will use your Github name or username.
+      placeholder: "First, First Last, or @handle"
+    validations:
+      required: false
+  - type: input
+    id: attribution-link
+    attributes:
+      label: Personal link
+      description: If you'd like, include a link to your personal site, Twitter, or wherever else people could find you.
+      placeholder: "https://twitter.com/handle"
+    validations:
+      required: false

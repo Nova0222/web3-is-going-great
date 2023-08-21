@@ -1,0 +1,100 @@
+@import _tokens
+
+.admin
+  .generic-page
+    width: 90%
+    max-width: 1800px
+    padding-top: 50px
+
+  .login-form
+    display: flex
+    flex-direction: column
+    margin-top: 30px
+    max-width: 300px
+
+  .entry-form
+    button
+      align-self: flex-start
+      padding: 5px
+      margin-top: 10px
+      background-color: $card-background
+      border: 1px solid #000000
+
+      &:not(:first-of-type)
+        margin-left: 10px
+
+      &.save-button
+        i
+          padding-right: 5px
+
+  .form-wrapper
+    display: flex
+    flex-wrap: nowrap
+    margin: 0 auto
+
+  .entry-form, .entry
+    flex: 1
+
+  .entry-form
+    .row, .half, .group
+      display: flex
+      flex: 1
+      box-sizing: content-box
+
+    .row
+      align-items: flex-end
+      margin-bottom: 10px
+
+      &.stretch
+        align-items: stretch
+
+    .half, .group, .third, .shrink, .grow
+      display: flex
+      flex-direction: column
+
+      &.row
+        flex-direction: row
+        align-items: center
+
+    .half
+      width: 50%
+
+    .third
+      width: 33%
+
+    .half, .third, .shrink, .grow
+      &:not(:first-child)
+        padding-left: 10px
+
+    .grow
+      flex-grow: 1
+
+    fieldset
+      display: flex
+      flex-direction: column
+      flex: 1
+      height: 100%
+
+      &:not(:first-child)
+        padding-left: 10px
+
+  .entry
+    margin: 20px 0 0 50px
+
+    .timeline-entry
+      position: static
+      margin: 0
+
+      .timeline-description
+        width: 100%
+        max-width: 700px
+        min-width: 400px
+
+        &::after
+          display: none
+
+      .timeline-icon
+        display: none
+
+hr
+  margin: 20px 0

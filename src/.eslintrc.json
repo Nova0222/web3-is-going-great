@@ -1,0 +1,21 @@
+{
+    "extends": [
+        "next/core-web-vitals",
+        "eslint:recommended",
+        "plugin:react/recommended"
+    ],
+    "rules": {
+        "no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+        "react/no-unescaped-entities": 0,
+        "react/jsx-no-target-blank": [
+            "error",
+            {
+                "allowReferrer": true
+            }
+        ],
+        "react/react-in-jsx-scope": 0
+    },
+    "env": {
+        "es6": true
+    }
+}
